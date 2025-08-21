@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TimberMarker.TaskConfig.Label>任务设置</TimberMarker.TaskConfig.Label>
+  <TimberMarker.TaskConfig.Desc>打开任务面板。</TimberMarker.TaskConfig.Desc>
+  
+  <TimberMarker.TaskConfigWindow.Enabled.Label>任务运行中</TimberMarker.TaskConfigWindow.Enabled.Label>
+  <TimberMarker.TaskConfigWindow.MaintainCount.Label>库存维持数量</TimberMarker.TaskConfigWindow.MaintainCount.Label>
+  <TimberMarker.TaskConfigWindow.ParsedRadius.Label>资源搜索半径</TimberMarker.TaskConfigWindow.ParsedRadius.Label>
+  <TimberMarker.TaskConfigWindow.MinGrowth.Label>树木最小生长程度</TimberMarker.TaskConfigWindow.MinGrowth.Label>
+</LanguageData>

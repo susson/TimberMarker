@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimberMarker", "TimberMarker.csproj", "{B6E23ECE-5D5D-7F09-D428-A81BF7216AB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		ReleaseV1.6|Any CPU = ReleaseV1.6|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6E23ECE-5D5D-7F09-D428-A81BF7216AB0}.ReleaseV1.6|Any CPU.ActiveCfg = ReleaseV1.6|Any CPU
+		{B6E23ECE-5D5D-7F09-D428-A81BF7216AB0}.ReleaseV1.6|Any CPU.Build.0 = ReleaseV1.6|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8D9DF1F-B25D-4847-B560-656C9E30B833}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,14 @@
+<ModMetaData>
+  <name>TimberMarker</name>
+  <author>Sol</author>
+  <packageId>Sol.TimberMarker</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modVersion>1.0.0</modVersion>
+  <description>
+    Automatically marks mature trees for cutting when wood stock falls below a set threshold.
+	
+    中文说明：可以在地图上设置一个伐木标记点，并设置最低库存、范围等参数。只要达到预设的条件，就会自动给树木标记成“砍伐”状态。
+  </description>
+</ModMetaData>

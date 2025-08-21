@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>TimberMarkerSpot</defName>
+    <label>timber marker spot</label>
+    <description>A place for automatically marking nearby mature trees for cutting when wood reserves fall below a set threshold.</description>
+
+    <thingClass>TimberMarker.BuildingTimberMarkerSpot</thingClass>
+
+    <graphicData>
+      <texPath>Things/Building/Furniture/PenMarker</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.2, 0.5, 0.2)</volume>
+        <offset>(0,0,-0.23)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.25,0.6,0.5,0.2)</rect>
+      </damageData>
+    </graphicData>
+    
+    <altitudeLayer>Building</altitudeLayer> <!-- 渲染层级：地面放置类 -->
+    <passability>PassThroughOnly</passability> <!-- 格子可站立 -->
+    <castEdgeShadows>false</castEdgeShadows> <!-- 投射阴影 -->
+    <fillPercent>0</fillPercent>
+    <statBases> <!-- 基础属性 -->
+      <WorkToBuild>0</WorkToBuild> <!-- 建造时间0（放置即完成） -->
+      <Mass>1</Mass>
+    </statBases>
+    <scatterableOnMapGen>false</scatterableOnMapGen> <!-- 地图生成时不会随机生成 -->
+    <useHitPoints>false</useHitPoints> <!-- 无耐久度，不会损坏 -->
+    <size>(1,1)</size> <!-- 占地1x1格 -->
+    <designationCategory>Production</designationCategory> <!-- 出现在生产类菜单 -->
+    <uiOrder>2001</uiOrder> <!-- UI排序位置 -->
+    <hasInteractionCell>False</hasInteractionCell> <!-- 无交互格 -->
+    <surfaceType>Item</surfaceType> <!-- 表面类型：可放物品 -->
+    
+    <building> <!-- 建筑额外属性 -->
+      <sowTag>SupportPlantsOnly</sowTag> <!-- 支持植物类型标签 -->
+      <canPlaceOverImpassablePlant>true</canPlaceOverImpassablePlant> <!-- 能否放置在阻挡型植物上 -->
+      <ai_chillDestination>false</ai_chillDestination> <!-- AI不会把它当作休闲目的地 -->
+      <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction> <!-- 建造时不唤醒休眠Pawn -->
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes> <!-- 冥想时不视为人工物 -->
+      <buildingTags>
+        <li>Production</li> <!-- 建筑标签：生产类 -->
+      </buildingTags>
+    </building>
+
+    <!-- 添加 tickerType：Rare / Normal / Long 根据需要选择 -->
+    <tickerType>Long</tickerType>
+
+    <comps>
+      <li Class="TimberMarker.CompProperties_TimberMarker"/>
+    </comps>
+  </ThingDef>
+</Defs>

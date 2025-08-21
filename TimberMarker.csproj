@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net481</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+    <Configurations>ReleaseV1.5;ReleaseV1.6</Configurations>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Defs\ThingDefs\**" />
+    <EmbeddedResource Remove="Defs\ThingDefs\**" />
+    <None Remove="Defs\ThingDefs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Publicizer 用于访问私有成员 -->
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'ReleaseV1.6'">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4543" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'ReleaseV1.5'">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 引用 HarmonyLib，用于方法打补丁 -->
+    <PackageReference Include="Lib.Harmony" Version="2.3.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp;UnityEngine.CoreModule" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Source\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Textures\LoggingSpot.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- 自动复制输出DLL到Mod文件夹 -->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="IF &quot;$(Configuration)&quot;==&quot;ReleaseV1.6&quot; (&#xD;&#xA;    rmdir /s /q &quot;$(SolutionDir)ModPackageFolder\TimberMarker&quot;&#xD;&#xA;    XCOPY &quot;$(SolutionDir)About&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\About\&quot; /S /Y&#xD;&#xA;    XCOPY &quot;$(SolutionDir)Defs&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Defs\&quot; /S /Y&#xD;&#xA;    XCOPY &quot;$(SolutionDir)Textures&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Textures\&quot; /S /Y&#xD;&#xA;    XCOPY &quot;$(SolutionDir)Languages&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Languages\&quot; /S /Y&#xD;&#xA;    XCOPY &quot;$(SolutionDir)bin\ReleaseV1.6&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Assemblies\&quot; /S /Y&#xD;&#xA;&#xD;&#xA;    rmdir /s /q &quot;D:\Games\RimWorld\RimWorld_V1.64518\Mods\TimberMarker&quot;&#xD;&#xA;    XCOPY &quot;$(SolutionDir)ModPackageFolder\TimberMarker&quot; &quot;D:\Games\RimWorld\RimWorld_V1.64518\Mods\TimberMarker\&quot; /S /Y&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;IF &quot;$(Configuration)&quot;==&quot;ReleaseV1.5&quot; (&#xD;&#xA;    XCOPY &quot;$(SolutionDir)bin\ReleaseV1.5&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\v1.5\Assemblies\&quot; /S /Y&#xD;&#xA;)" />
+  </Target>
+</Project>
