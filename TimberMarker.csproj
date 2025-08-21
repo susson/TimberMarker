@@ -39,14 +39,8 @@
     <Folder Include="Source\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Textures\LoggingSpot.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
   <!-- 自动复制输出DLL到Mod文件夹 -->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="IF &quot;$(Configuration)&quot;==&quot;ReleaseV1.6&quot; (&#xD;&#xA;    rmdir /s /q &quot;$(SolutionDir)ModPackageFolder\TimberMarker&quot;&#xD;&#xA;    XCOPY &quot;$(SolutionDir)About&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\About\&quot; /S /Y&#xD;&#xA;    XCOPY &quot;$(SolutionDir)Defs&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Defs\&quot; /S /Y&#xD;&#xA;    XCOPY &quot;$(SolutionDir)Textures&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Textures\&quot; /S /Y&#xD;&#xA;    XCOPY &quot;$(SolutionDir)Languages&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Languages\&quot; /S /Y&#xD;&#xA;    XCOPY &quot;$(SolutionDir)bin\ReleaseV1.6&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Assemblies\&quot; /S /Y&#xD;&#xA;&#xD;&#xA;    rmdir /s /q &quot;D:\Games\RimWorld\RimWorld_V1.64518\Mods\TimberMarker&quot;&#xD;&#xA;    XCOPY &quot;$(SolutionDir)ModPackageFolder\TimberMarker&quot; &quot;D:\Games\RimWorld\RimWorld_V1.64518\Mods\TimberMarker\&quot; /S /Y&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;IF &quot;$(Configuration)&quot;==&quot;ReleaseV1.5&quot; (&#xD;&#xA;    XCOPY &quot;$(SolutionDir)bin\ReleaseV1.5&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\v1.5\Assemblies\&quot; /S /Y&#xD;&#xA;)" />
+    <Exec Command="rmdir /s /q &quot;$(SolutionDir)ModPackageFolder\TimberMarker&quot;&#xD;&#xA;XCOPY &quot;$(SolutionDir)About&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\About\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)Defs&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Defs\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)Languages&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Languages\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)bin\ReleaseV1.6&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Assemblies\&quot; /S /Y&#xD;&#xA;" />
   </Target>
 </Project>
