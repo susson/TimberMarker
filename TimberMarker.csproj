@@ -3,7 +3,7 @@
     <TargetFramework>net481</TargetFramework>
     <LangVersion>12</LangVersion>
     <Nullable>enable</Nullable>
-    <Configurations>ReleaseV1.5;ReleaseV1.6</Configurations>
+    <Configurations>ReleaseV1.6</Configurations>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>
@@ -22,10 +22,6 @@
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4543" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)' == 'ReleaseV1.5'">
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" />
-  </ItemGroup>
-
   <ItemGroup>
     <!-- 引用 HarmonyLib，用于方法打补丁 -->
     <PackageReference Include="Lib.Harmony" Version="2.3.6" />
@@ -41,6 +37,6 @@
 
   <!-- 自动复制输出DLL到Mod文件夹 -->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="rmdir /s /q &quot;$(SolutionDir)ModPackageFolder\TimberMarker&quot;&#xD;&#xA;XCOPY &quot;$(SolutionDir)About&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\About\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)Defs&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Defs\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)Languages&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Languages\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)bin\ReleaseV1.6&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Assemblies\&quot; /S /Y&#xD;&#xA;" />
+    <Exec Command="rmdir /s /q &quot;$(SolutionDir)ModPackageFolder\TimberMarker&quot;&#xD;&#xA;XCOPY &quot;$(SolutionDir)About&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\About\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)Defs&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Defs\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)Languages&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Languages\&quot; /S /Y&#xD;&#xA;XCOPY &quot;$(SolutionDir)bin\ReleaseV1.6&quot; &quot;$(SolutionDir)ModPackageFolder\TimberMarker\Assemblies\&quot; /S /Y" />
   </Target>
 </Project>
