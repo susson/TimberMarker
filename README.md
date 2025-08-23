@@ -30,7 +30,9 @@ If you place markers and later disable the mod, on the next load you may see an 
 - Languages
 The mod includes Simplified Chinese and English. English translations were generated with AI assistance; please contact me if you find mistakes. If you need other languages, I can consider adding them.
 ---
+
 - 性能影响
+
 本模组设计轻量，对游戏性能的影响可忽略不计。
 - 兼容性 / 禁用时的提示
 如果你在地图上放置了伐木点后禁用本模组，下一次加载该存档时可能会出现错误提示并且伐木点会自动消失。这种错误提示不会损坏存档——你可以忽略提示并继续游戏。
