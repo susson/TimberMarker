@@ -34,6 +34,7 @@ If you place markers and later disable the mod, on the next load you may see an 
 - Languages
 
 The mod includes Simplified Chinese and English. English translations were generated with AI assistance; please contact me if you find mistakes. If you need other languages, I can consider adding them.
+
 ---
 
 - 性能影响
