@@ -23,17 +23,16 @@ Early-game often requires a steady supply of wood (for wooden furniture, passive
 
 ## FAQ 常见问题
 
-- Performance impact 性能影响
+- Performance impact
 The mod is lightweight and has negligible impact on game performance.
-
-本模组设计轻量，对游戏性能的影响可忽略不计。
-
-- Compatibility / Disabling the mod 兼容性 / 禁用时的提示
+- Compatibility / Disabling the mod
 If you place markers and later disable the mod, on the next load you may see an error popup and the markers will disappear. The error can be safely ignored — save files are not harmed.
-
-如果你在地图上放置了伐木点后禁用本模组，下一次加载该存档时可能会出现错误提示并且伐木点会自动消失。这种错误提示不会损坏存档——你可以忽略提示并继续游戏。
-
-- Languages 多语言
+- Languages
 The mod includes Simplified Chinese and English. English translations were generated with AI assistance; please contact me if you find mistakes. If you need other languages, I can consider adding them.
-
+---
+- 性能影响
+本模组设计轻量，对游戏性能的影响可忽略不计。
+- 兼容性 / 禁用时的提示
+如果你在地图上放置了伐木点后禁用本模组，下一次加载该存档时可能会出现错误提示并且伐木点会自动消失。这种错误提示不会损坏存档——你可以忽略提示并继续游戏。
+- 多语言
 模组内置了简体中文和英语。作者英语水平有限，部分英文为 AI 辅助翻译，如发现不妥欢迎联系我。如需其它语言翻译也可提出。
