@@ -49,7 +49,7 @@ namespace TimberMarker
             try
             {
                 map.designationManager.AddDesignation(new Designation(targetTree, DesignationDefOf.CutPlant));
-                Log.Message($"[TimberMarker] 标记砍伐: {targetTree} at {targetTree.Position} by {parent.LabelShort}");
+                // Log.Message($"[TimberMarker] 标记砍伐: {targetTree} at {targetTree.Position} by {parent.LabelShort}");
             }
             catch (Exception ex)
             {

@@ -6,7 +6,7 @@ namespace TimberMarker
     {
         public TimberMarker(ModContentPack content) : base(content)
         {
-            Log.Message("[TimberMarker] Mod loaded successfully!");
+            // Log.Message("[TimberMarker] Mod loaded successfully!");
         }
     }
 }
