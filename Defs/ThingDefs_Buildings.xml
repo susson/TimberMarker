@@ -35,6 +35,10 @@
     <hasInteractionCell>False</hasInteractionCell> <!-- 无交互格 -->
     <surfaceType>Item</surfaceType> <!-- 表面类型：可放物品 -->
     
+    <inspectorTabs>
+      <li>TimberMarker.ITab_TimberMarkerConfig</li> <!-- 检查面板显示标签页 -->
+    </inspectorTabs>
+    
     <building> <!-- 建筑额外属性 -->
       <sowTag>SupportPlantsOnly</sowTag> <!-- 支持植物类型标签 -->
       <canPlaceOverImpassablePlant>true</canPlaceOverImpassablePlant> <!-- 能否放置在阻挡型植物上 -->

@@ -82,8 +82,7 @@ namespace TimberMarker
             var left3 = new Rect(row3.x, row3.y, row3.width * 0.4f, rowHeight);
             var right3 = new Rect(left3.xMax, row3.y, row3.width * 0.6f, rowHeight);
 
-            // Widgets.Label(left3, "搜索半径:");
-            Widgets.Label(left3, "TimberMarker.TaskConfigWindow.ParsedRadius.Label".Translate());
+            Widgets.Label(left3, "IngredientSearchRadius".Translate());
             string radiusText = Widgets.TextField(right3, searchRadius.ToString());
             if (int.TryParse(radiusText, out int parsedRadius))
             {
