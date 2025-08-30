@@ -3,8 +3,8 @@
   <TimberMarker.TaskConfig.Label>Task Settings</TimberMarker.TaskConfig.Label>
   <TimberMarker.TaskConfig.Desc>Open the task configuration window.</TimberMarker.TaskConfig.Desc>
 
-  <TimberMarker.TaskConfigWindow.Enabled.Label>Active Task</TimberMarker.TaskConfigWindow.Enabled.Label>
+  <!-- <TimberMarker.TaskConfigWindow.Enabled.Label>Active Task</TimberMarker.TaskConfigWindow.Enabled.Label> -->
   <TimberMarker.TaskConfigWindow.MaintainCount.Label>Desired Stock</TimberMarker.TaskConfigWindow.MaintainCount.Label>
-  <TimberMarker.TaskConfigWindow.ParsedRadius.Label>Search Radius</TimberMarker.TaskConfigWindow.ParsedRadius.Label>
+  <!-- <TimberMarker.TaskConfigWindow.ParsedRadius.Label>Search Radius</TimberMarker.TaskConfigWindow.ParsedRadius.Label> -->
   <TimberMarker.TaskConfigWindow.MinGrowth.Label>Minimum Growth</TimberMarker.TaskConfigWindow.MinGrowth.Label>
 </LanguageData>

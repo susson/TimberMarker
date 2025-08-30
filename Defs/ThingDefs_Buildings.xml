@@ -5,7 +5,7 @@
     <label>timber marker spot</label>
     <description>A place for automatically marking nearby mature trees for cutting when wood reserves fall below a set threshold.</description>
 
-    <thingClass>TimberMarker.BuildingTimberMarkerSpot</thingClass>
+    <!-- <thingClass>TimberMarker.BuildingTimberMarkerSpot</thingClass> -->
 
     <graphicData>
       <texPath>Things/Building/Furniture/PenMarker</texPath>

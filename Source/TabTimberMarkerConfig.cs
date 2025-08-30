@@ -14,7 +14,8 @@ namespace TimberMarker
         public ITab_TimberMarkerConfig()
         {
             this.size = new Vector2(TabWidth, TabHeight);
-            this.labelKey = "TimberMarker.TaskConfig.Label".Translate();
+            //this.labelKey = "TimberMarker.TaskConfig.Label".Translate();
+            this.labelKey = "TabBills".Translate();
         }
 
         private CompTimberMarker? SelectedComp
@@ -26,12 +27,31 @@ namespace TimberMarker
             }
         }
 
+        public override void TabUpdate()
+        {
+            base.TabUpdate();
+
+            var comp = SelectedComp;
+            if (comp == null || comp.parent == null || comp.parent.Map == null)
+            {
+                return;
+            }
+
+            float drawRadius = comp.SearchRadius;
+
+            if (drawRadius >= 3f && drawRadius < GenRadial.MaxRadialPatternRadius)
+            {
+                // 每帧在地图上绘制圆环
+                GenDraw.DrawRadiusRing(comp.parent.Position, drawRadius);
+            }
+        }
+
         public override void FillTab()
         {
             var comp = SelectedComp;
             if (comp == null)
             {
-                Widgets.Label(new Rect(0f, 0f, 300f, 30f), "TimberMarker.NoComp".Translate());
+                Widgets.Label(new Rect(0f, 0f, 300f, 30f), "TimberMarker.NoComp");
                 return;
             }
 
@@ -50,9 +70,7 @@ namespace TimberMarker
             ls.Begin(viewRect);
 
             // 第 1 行：任务开启
-            ls.CheckboxLabeled("TimberMarker.TaskConfigWindow.Enabled.Label".Translate(),
-                ref comp.Enabled,
-                "TimberMarker.TaskConfigWindow.Enabled.Desc".Translate());
+            ls.CheckboxLabeled("Enabled".Translate(), ref comp.Enabled);
             ls.Gap(6f);
 
             // 第 2 行：维持库存
@@ -61,6 +79,7 @@ namespace TimberMarker
             var right2 = new Rect(left2.xMax, row2.y, row2.width * right, rowHeight);
 
             Widgets.Label(left2, "TimberMarker.TaskConfigWindow.MaintainCount.Label".Translate());
+            //Widgets.Label(left2, "TargetCount.label".Translate());
             string countText = Widgets.TextField(right2, comp.MaintainCount.ToString());
             if (int.TryParse(countText, out int parsedCount))
             {
@@ -89,7 +108,7 @@ namespace TimberMarker
                 3f,
                 101f,
                 middleAlignment: false,
-                label: sliderValue >= 101f ? "无限制" : Mathf.RoundToInt(sliderValue).ToString()
+                label: sliderValue >= 101f ? "Unlimited".Translate() : Mathf.RoundToInt(sliderValue).ToString()
             );
 
             // 将滑块值写回 comp（滑到 101 则写 0 表示无限制）
@@ -98,7 +117,6 @@ namespace TimberMarker
             {
                 comp.SearchRadius = newRadius;
             }
-
             ls.Gap(6f);
 
             // 第 4 行：最小生长程度 滑块
@@ -117,15 +135,6 @@ namespace TimberMarker
                 label: $"{Mathf.RoundToInt(comp.MinGrowth * 100)}%"
             );
             ls.Gap(6f);
-
-            // 应用按钮（仅做提示/反馈）
-            //if (ls.ButtonText("TimberMarker.TaskConfigWindow.ApplyButton".Translate()))
-            //{
-            //    // 触发提示并尝试调用 Comp 的回调（若存在）
-            //    var mi = comp.GetType().GetMethod("Notify_SettingsChanged", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-            //    mi?.Invoke(comp, null);
-            //    Messages.Message("TimberMarker.TaskConfigWindow.AppliedMessage".Translate(), MessageTypeDefOf.PositiveEvent);
-            //}
 
             ls.End();
             Widgets.EndScrollView();
