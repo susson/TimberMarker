@@ -98,7 +98,14 @@ namespace TimberMarker
                     return (null, true);
                 }
 
-                if (p.Growth < minGrowth) continue;
+                if (!p.HarvestableNow) continue;
+
+                // 不满足生长度要求
+                if (minGrowth == 1)
+                {
+                    if (p.Growth < 0.999) continue;
+                }
+                else if (p.Growth < minGrowth) continue;
 
                 int dx = thing.Position.x - center.x;
                 int dz = thing.Position.z - center.z;
